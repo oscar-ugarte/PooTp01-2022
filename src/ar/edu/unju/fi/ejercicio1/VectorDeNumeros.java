@@ -131,4 +131,42 @@ public class VectorDeNumeros
 		}
 		return vector;
 	}
+	
+
+	/**
+	 * Se encarga de buscar le numero pasado por parametro en el vector.
+	 * Si no lo encuentra devuelve null, caso contrario devuelve la posición del número.
+	 * @param vector
+	 * @param buscado
+	 * @return
+	 */
+	public static Integer buscarNumeroEnElVector( Integer[] vector , Integer buscado )
+	{
+		int i = 0;
+		while(i <= posicionDelVector && !vector[i].equals(buscado) )
+		{
+			i++;
+		}
+		return i <= posicionDelVector ? i : null ;
+	}
+	
+	/**
+	 * Se encarga de eliminar el número pasado por parametros en el Vector si lo encuentra.
+	 * @param vector
+	 * @param buscado
+	 * @return
+	 */
+	public static Integer[] eliminarNumero(Integer[] vector , Integer buscado)
+	{
+		Integer posicionDelNumero = buscarNumeroEnElVector(vector, buscado);
+		if( posicionDelNumero != null )
+		{
+			for(int i = posicionDelNumero ; i <= posicionDelVector - 1; i++)
+			{
+				vector[i] = vector[i + 1 ] ;
+			}
+			posicionDelVector--;
+		}
+		return vector;
+	}
 }

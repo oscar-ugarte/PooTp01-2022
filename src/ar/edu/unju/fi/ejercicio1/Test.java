@@ -46,7 +46,9 @@ public class Test {
 					VectorDeNumeros.mostrarVector(miVector);
 					break;
 				case 3:
-					
+					System.out.print("Ingrese el numero a eliminar: ");
+					numero = teclado.nextInt();
+					miVector = VectorDeNumeros.eliminarNumero(miVector, numero);
 					break;
 				case 4:
 					
