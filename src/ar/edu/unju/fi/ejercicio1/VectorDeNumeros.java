@@ -103,4 +103,32 @@ public class VectorDeNumeros
 			System.out.println("Posicion: " + i + " = " + vector[i] );
 		}
 	}
+	
+	/**
+	 * Calcula el cuadrado del número pasado por parametro.
+	 * @param base
+	 * @return
+	 */
+	public static Integer calcularCuadrado(Integer base)
+	{
+		return (int) Math.pow(base, 2);
+	}
+	
+	/**
+	 * Busca los multiplos de tres del vector pasado por parametros y los elevea al
+	 * cuadrado.
+	 * @param vector
+	 * @return
+	 */
+	public static Integer[] cambiarMultiplosDeTres(Integer[] vector )
+	{
+		for(int i = 0 ; i <= posicionDelVector ; i++ )
+		{
+			if( vector[i] % 3 == 0 )
+			{
+				vector[i] = calcularCuadrado(vector[i]);
+			}
+		}
+		return vector;
+	}
 }

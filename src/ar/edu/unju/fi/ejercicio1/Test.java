@@ -12,6 +12,9 @@ public class Test {
 		Integer [] miVector = VectorDeNumeros.crearVector() ;
 		miVector = VectorDeNumeros.cargarVector(miVector);
 		VectorDeNumeros.mostrarVector(miVector);
+		miVector = VectorDeNumeros.cambiarMultiplosDeTres(miVector);
+		System.out.println();
+		VectorDeNumeros.mostrarVector(miVector);
 	}
 
 }
