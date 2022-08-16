@@ -5,8 +5,8 @@ package ar.edu.unju.fi.ejercicio1;
  * */
 public class VectorDeNumeros
 {
-	public static final int TAMANIO_VECTOR = 5;
-	public static final int LIMITE = 1000;
+	public static final int TAMANIO_VECTOR = 6;
+	public static final int LIMITE = 10;
 	public static int posicionDelVector = -1;
 
 	/**
@@ -134,7 +134,7 @@ public class VectorDeNumeros
 	
 
 	/**
-	 * Se encarga de buscar le numero pasado por parametro en el vector.
+	 * Se encarga de buscar el numero pasado por parametro en el vector.
 	 * Si no lo encuentra devuelve null, caso contrario devuelve la posición del número.
 	 * @param vector
 	 * @param buscado
@@ -168,5 +168,28 @@ public class VectorDeNumeros
 			posicionDelVector--;
 		}
 		return vector;
+	}
+	
+	/**
+	 * Recorre el vector pasado por parametro comparando las diferencias entre números. Si la diferencia es negativa se la convierte a positivo.
+	 * Si encuentra un resultado que coincida con el número objectivo pasado por parametros lo cuenta.
+	 * Al final devuelve la cantidad de coincidencias que encontró.
+	 * @param vector
+	 * @param numeroObjectivo
+	 * @return
+	 */
+	public static Integer obtenerParesDeDiferenciasEntreNumeros(Integer[] vector, Integer numeroObjectivo )
+	{
+		Integer cantidad = 0, diferencia = 0 ;
+		for(int i = 0 ; i < posicionDelVector ; i++ )
+		{
+			for(int j = i + 1; j <= posicionDelVector ; j++)
+			{
+				diferencia = vector[i] - vector[j] > 0 ? (vector[i] - vector[j]) : (vector[i] - vector[j]) * (-1) ;
+				if( diferencia == numeroObjectivo )
+					cantidad++;
+			}
+		}
+		return cantidad;
 	}
 }

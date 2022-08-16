@@ -19,7 +19,7 @@ public class Test {
 		System.out.println("1) Mostrar Vector.");
 		System.out.println("2) Calcular cuadrado de los multiplos de 3.");
 		System.out.println("3) Eliminar un numero del vector.");
-		System.out.println("4) ");
+		System.out.println("4) Recorre el vector contando la diferencias entre pares de numeros que coincidan con el numero indicado.");
 		System.out.print("Ingrese una opcion: " );
 	}
 	
@@ -51,7 +51,9 @@ public class Test {
 					miVector = VectorDeNumeros.eliminarNumero(miVector, numero);
 					break;
 				case 4:
-					
+					System.out.print("Ingrese el numero que quiere buscar entre las restas del vector: ");
+					numero = teclado.nextInt();
+					System.out.println("Se encontraron un total de : "  + VectorDeNumeros.obtenerParesDeDiferenciasEntreNumeros(miVector, numero) + " coincidencias con  " + numero + " .");
 					break;
 				default:
 					System.out.println("Opcion invalida.");
